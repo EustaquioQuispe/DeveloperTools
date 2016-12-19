@@ -30,3 +30,6 @@ cambiar el tiempo maximo de session (1440 segundos por defecto)
   Settings->Features->General->Login cookie validity
 Cambiar en php.ini
   session.gc_maxlifetime = MismoValorConfigurado
+
+WINDOWS
+instalar Xampp o Wamp
