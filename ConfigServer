@@ -1,0 +1,32 @@
+Instalar servidor local en linux
+Instalar Apache/httpd
+  $ sudo apt-get install apache2
+Ver log de errores de apache 
+  $ nano /var/log/apache2/error.log
+Instalar Mysql
+  $ sudo apt-get install mysql-server mysql-client
+Instalar PHP
+  $ sudo apt-get install php
+  $ sudo apt-get install php-cli
+  $ sudo apt-get install libapache2-mod-php
+Otros
+  $ sudo apt-get install php-mysql php-gd php-curl php-cgi php-pear php-mcrypt php7.0-mbstring php-mbstring php-gettext php-bcmath
+
+Levantar/Detener/Reiniciar servicios(apache2/httpd/mysql)
+  $ sudo service apache2 [start/stop/restart]
+
+Para urls amigables
+  $sudo a2enmod rewrite
+En /etc/apache2/sites-available/000-default.conf
+  <Directory /var/www/html> 
+    AllowOverride All 
+  </Directory>
+
+Para phpmyadmin
+  $ sudo apt-get install phpmyadmin
+crear enlace simbólico
+  $ sudo ln -s /usr/share/phpmyadmin /var/www/html
+cambiar el tiempo maximo de session (1440 segundos por defecto)
+  Settings->Features->General->Login cookie validity
+Cambiar en php.ini
+  session.gc_maxlifetime = MismoValorConfigurado
